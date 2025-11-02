@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduna-Study-App</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font as the default sans-serif font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Smooth transition for the chevron icon rotation */
+        .chevron-icon {
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+    <!-- React CDN Scripts -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel CDN Script for JSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+
+    <!-- === ACCORDION PART (EDUNA-STUDY-APP) === -->
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden mt-[45px]">
+        
+        <!-- Centered Header -->
+        <header class="p-6 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-center">
+            <h1 class="text-[20px] font-bold">Eduna-Study-App</h1>
+            <p class="mt-1 text-pink-100">3rd Grade Curriculum Practice</p>
+            <p class="mt-2 text-xs text-pink-200">Based on Glen Burnie, Maryland Standards</p>
+        </header>
+
+        <!-- Accordion Container -->
+        <div id="accordion-container">
+
+            <!-- Subject 1: Math -->
+            <div class="border-b border-gray-200">
+                <!-- Subject 1 Trigger -->
+                <button 
+                    class="w-full flex justify-between items-center p-5 text-left text-xl font-semibold text-gray-800 hover:bg-pink-50 focus:outline-none focus:bg-pink-100"
+                    data-accordion-trigger
+                    aria-expanded="false"
+                    aria-controls="subject-1-content"
+                >
+                    <span>Subject 1: 3rd Grade Math</span>
+                    <!-- Chevron Icon -->
+                    <svg class="chevron-icon w-6 h-6 text-gray-500 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <!-- Subject 1 Content (Levels) -->
+                <div 
+                    id="subject-1-content" 
+                    class="hidden bg-pink-50 p-4 sm:p-6"
+                >
+                    <div class="space-y-3">
+                        
+                        <!-- Level 1: Basic Addition -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 1: Basic Addition (2-digit)</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's start with the basics! In this level, you'll learn how to add two-digit numbers (like 25 + 14) where you don't have to 'carry over' any numbers. It's the first step to becoming a math whiz!</p>
+                            </div>
+                            <button data-quiz-level="Math-1" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 1 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 2: Basic Subtraction -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 2: Basic Subtraction (2-digit)</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Time to practice taking away! This level covers subtracting two-digit numbers (like 48 - 23) without needing to 'borrow'. This helps you get fast and accurate at subtraction.</p>
+                            </div>
+                            <button data-quiz-level="Math-2" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 2 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 3: Addition with Regrouping -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 3: Addition with Regrouping</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">This is where it gets interesting! You'll learn how to "carry over" or "regroup" when your columns add up to more than 9 (like 37 + 45). This is a super important skill for all future math.</p>
+                            </div>
+                            <button data-quiz-level="Math-3" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 3 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 4: Subtraction with Regrouping -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 4: Subtraction with Regrouping</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Ready for a challenge? This level teaches "borrowing" for subtraction. You'll learn what to do when the top number is smaller than the bottom number (like 52 - 17). Master this, and you can subtract anything!</p>
+                            </div>
+                            <button data-quiz-level="Math-4" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 4 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 5: Intro to Multiplication (0-5) -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 5: Intro to Multiplication (0-5)</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Multiplication is just fast adding! Here you'll learn what 3 x 4 means (three groups of four) and master your first times tables: the 0s, 1s, 2s, and 5s.</p>
+                            </div>
+                            <button data-quiz-level="Math-5" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 5 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 6: Multiplication Facts (6-10) -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 6: Multiplication Facts (6-10)</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's complete your times tables! This level focuses on the trickier numbers: 6, 7, 8, 9, and 10. We'll learn tricks to remember them and practice until they're automatic.</p>
+                            </div>
+                            <button data-quiz-level="Math-6" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 6 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 7: Intro to Division -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 7: Intro to Division</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Division is all about sharing equally. You'll learn how division is the opposite of multiplication (if 3 x 4 = 12, then 12 ÷ 3 = 4) and practice your first division problems.</p>
+                            </div>
+                            <button data-quiz-level="Math-7" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 7 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 8: Understanding Fractions -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 8: Understanding Fractions</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">What is 1/2? Or 1/3? This level introduces you to the world of fractions! You'll learn how to read, write, and understand parts of a whole, like sharing a pizza with friends.</p>
+                            </div>
+                            <button data-quiz-level="Math-8" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 8 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 9: Telling Time & Money -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 9: Telling Time & Money</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's use math in the real world! You'll practice telling time to the nearest minute on a clock and learn how to count and make change with coins (pennies, nickels, dimes, quarters) and bills.</p>
+                            </div>
+                            <button data-quiz-level="Math-9" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 9 Quiz
+                            </button>
+                        </div>
+                        
+                        <!-- Level 10: Mixed Review Word Problems -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 10: Mixed Review Word Problems</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Put it all together! This final math level gives you tricky word problems where you have to decide if you need to add, subtract, multiply, or divide. You'll become a math detective!</p>
+                            </div>
+                            <button data-quiz-level="Math-10" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 10 Quiz
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 2: English -->
+            <div class="border-b border-gray-200">
+                <!-- Subject 2 Trigger -->
+                <button 
+                    class="w-full flex justify-between items-center p-5 text-left text-xl font-semibold text-gray-800 hover:bg-pink-50 focus:outline-none focus:bg-pink-100"
+                    data-accordion-trigger
+                    aria-expanded="false"
+                    aria-controls="subject-2-content"
+                >
+                    <span>Subject 2: 3rd Grade English</span>
+                    <svg class="chevron-icon w-6 h-6 text-gray-500 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <!-- Subject 2 Content (Levels) -->
+                <div 
+                    id="subject-2-content" 
+                    class="hidden bg-pink-50 p-4 sm:p-6"
+                >
+                    <div class="space-y-3">
+                        
+                        <!-- Level 1: Spelling Basics -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 1: Spelling Basics</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's become amazing spellers! This level helps you practice common 3rd-grade words and learn basic spelling rules, like when to use 'ie' or 'ei'.</p>
+                            </div>
+                            <button data-quiz-level="English-1" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 1 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 2: Vocabulary Building -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 2: Vocabulary Building</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Words are power! You'll learn new, exciting words, find out what they mean (their definitions), and practice using them in your own sentences to sound like a genius.</p>
+                            </div>
+                            <button data-quiz-level="English-2" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 2 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 3: Identifying Nouns -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 3: Identifying Nouns</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">What is a noun? It's a person (like 'teacher'), a place (like 'school'), or a thing (like 'book'). You'll become an expert at finding them in sentences!</p>
+                            </div>
+                            <button data-quiz-level="English-3" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 3 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 4: Identifying Verbs -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 4: Identifying Verbs</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Verbs are action words! You'll learn to spot words that show action (like 'run', 'jump', 'think') and "helping" verbs (like 'is', 'are', 'was') that connect sentences.</p>
+                            </div>
+                            <button data-quiz-level="English-4" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 4 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 5: Adjectives and Adverbs -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 5: Adjectives and Adverbs</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's add some detail! Adjectives describe nouns (like 'happy dog'), and adverbs describe verbs (like 'run quickly'). You'll learn to use them to make your writing more colorful.</p>
+                            </div>
+                            <button data-quiz-level="English-5" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 5 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 6: Punctuation (Periods, Commas) -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 6: Punctuation (Periods, Commas)</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Punctuation helps us know when to stop and pause. You'll master using periods (.), question marks (?), and exclamation points (!) at the end of sentences, and commas (,) in lists.</p>
+                            </div>
+                            <button data-quiz-level="English-6" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 6 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 7: Capitalization -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 7: Capitalization</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">When do you use a big letter? This level teaches all the important rules, like capitalizing the first word of a sentence, names of people ('John'), places ('Maryland'), and holidays ('Christmas').</p>
+                            </div>
+                            <button data-quiz-level="English-7" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 7 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 8: Reading Comprehension 1 -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 8: Reading Comprehension 1</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's read a story! After reading a short passage, you'll practice answering questions to find the "main idea" (what the story is mostly about) and find important "key details" from the text.</p>
+                            </div>
+                            <button data-quiz-level="English-8" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 8 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 9: Reading Comprehension 2 -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 9: Reading Comprehension 2</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Time to read like a detective! You'll read slightly longer stories and learn to "make inferences" (figure out things the story doesn't tell you directly) and understand a character's feelings.</p>
+                            </div>
+                            <button data-quiz-level="English-9" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 9 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 10: Writing Prompts -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 10: Writing Prompts</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Now it's your turn to be the author! This level gives you fun ideas (prompts) to write about, helping you practice writing complete sentences and organizing your thoughts into a short paragraph.</p>
+                            </div>
+                            <button data-quiz-level="English-10" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 10 Quiz
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject 3: Science -->
+            <div class="border-b border-gray-200">
+                <!-- Subject 3 Trigger -->
+                <button 
+                    class="w-full flex justify-between items-center p-5 text-left text-xl font-semibold text-gray-800 hover:bg-pink-50 focus:outline-none focus:bg-pink-100"
+                    data-accordion-trigger
+                    aria-expanded="false"
+                    aria-controls="subject-3-content"
+                >
+                    <span>Subject 3: 3rd Grade Science</span>
+                    <svg class="chevron-icon w-6 h-6 text-gray-500 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <!-- Subject 3 Content (Levels) -->
+                <div 
+                    id="subject-3-content" 
+                    class="hidden bg-pink-50 p-4 sm:p-6"
+                >
+                    <div class="space-y-3">
+                        
+                        <!-- Level 1: Living and Non-Living -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 1: Living and Non-Living</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">What's the difference between a rock and a puppy? In this level, you'll learn the characteristics of living things (like breathing, growing, and eating) and how to sort things into "living" and "non-living" groups.</p>
+                            </div>
+                            <button data-quiz-level="Science-1" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 1 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 2: Plant Life Cycle -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 2: Plant Life Cycle</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">How does a tiny seed become a big flower? You'll learn all about the amazing life cycle of a plant, from a seed to a sprout, to a full-grown plant with flowers and fruits.</p>
+                            </div>
+                            <button data-quiz-level="Science-2" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 2 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 3: Animal Life Cycles -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 3: Animal Life Cycles</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Animals grow and change, too! You'll explore the life cycles of different animals, like how a tadpole turns into a frog, or how a caterpillar becomes a beautiful butterfly (metamorphosis).</p>
+                            </div>
+                            <button data-quiz-level="Science-3" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 3 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 4: Animal Habitats -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 4: Animal Habitats</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Every animal has a home! You'll learn about different "habitats" or homes (like the hot desert, the cold arctic, the wet ocean, and the busy forest) and which animals are special to each one.</p>
+                            </div>
+                            <button data-quiz-level="Science-4" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 4 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 5: Food Chains -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 5: Food Chains</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Where does energy come from? You'll learn how energy moves from the sun to "producers" (plants), to "consumers" (animals that eat plants or other animals) in a simple food chain.</p>
+                            </div>
+                            <button data-quiz-level="Science-5" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 5 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 6: The Solar System -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 6: The Solar System</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Let's go to space! You'll learn the names of the planets in our solar system (like Mercury, Venus, Earth, and Mars) and learn amazing facts about our Sun and Moon.</p>
+                            </div>
+                            <button data-quiz-level="Science-6" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 6 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 7: Earth's Rotation (Day/Night) -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 7: Earth's Rotation (Day/Night)</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Why does the sun "go down" at night? You'll learn that the Earth is always spinning (rotating) on its axis, and this spin is what causes the cycle of day and night.</p>
+                            </div>
+                            <button data-quiz-level="Science-7" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 7 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 8: Weather and Seasons -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 8: Weather and Seasons</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Why is it hot in summer and cold in winter? You'll learn about the four seasons (Spring, Summer, Fall, Winter) and how the Earth's tilt causes them. You'll also learn to measure weather with a thermometer.</p>
+                            </div>
+                            <button data-quiz-level="Science-8" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 8 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 9: States of Matter -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 9: States of Matter</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">Everything is made of matter! You'll learn to identify the three states of matter: "solid" (like an ice cube), "liquid" (like water), and "gas" (like steam), and how they can change.</p>
+                            </div>
+                            <button data-quiz-level="Science-9" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 9 Quiz
+                            </button>
+                        </div>
+
+                        <!-- Level 10: Simple Machines -->
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-rose-700 text-[18px]">Level 10: Simple Machines</h3>
+                                <p class="mt-2 text-gray-700 text-sm leading-relaxed">How do we make work easier? By using simple machines! You'll learn to identify and understand levers (like a seesaw), pulleys, and inclined planes (like a ramp).</p>
+                            </div>
+                            <button data-quiz-level="Science-10" class="quiz-start-btn w-full p-3 text-left font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none">
+                                Take Level 10 Quiz
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- New Container for React App -->
+    <div class="mt-8">
+        <!-- Header for the quiz section -->
+        <div class="max-w-2xl mx-auto text-center mb-4" id="quiz-app-header">
+            <h2 class="text-2xl font-bold text-gray-800">Practice Quiz</h2>
+            <p class="text-gray-600">Please select a level above to start a quiz, or take the mixed practice quiz below.</p>
+        </div>
+        <div id="react-app-root"></div>
+    </div>
+
+    <!-- === ACCORDION SCRIPT === -->
+    <script>
+        // JavaScript for Accordion Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all accordion triggers
+            const triggers = document.querySelectorAll('[data-accordion-trigger]');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    // Get the content panel associated with this trigger
+                    const contentId = trigger.getAttribute('aria-controls');
+                    const content = document.getElementById(contentId);
+                    
+                    // Get the icon within this trigger
+                    const icon = trigger.querySelector('.chevron-icon');
+
+                    if (!content) return;
+
+                    // Check if the content is currently expanded
+                    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+                    if (isExpanded) {
+                        // Collapse
+                        trigger.setAttribute('aria-expanded', 'false');
+                        content.classList.add('hidden');
+                        icon.classList.remove('rotate-180');
+                    } else {
+                        // Expand
+                        trigger.setAttribute('aria-expanded', 'true');
+                        content.classList.remove('hidden');
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+            
+            // NOTE: The 'quiz-start-btn' listeners are now handled inside the React app.
+            // This script just handles the main subject accordions.
+        });
+    </script>
+    
+    <!-- === REACT APP SCRIPT (All-in-One) === -->
+    <script type="text/babel">
+        // Destructure necessary hooks from the global React object
+        const { useState, useEffect, useCallback } = React;
+
+        // --- GLOBAL QUIZ BANK ---
+        // Moved to the top level so the App component can access it.
+        const quizBank = {
+            "Default-Mixed": [
+                { id: 1, subject: "Math", text: "What is 7 x 8?", options: ["54", "56", "63", "64"], correct: "56" },
+                { id: 2, subject: "English", text: "Which word is the NOUN in this sentence: 'The happy dog jumped over the fence.'", options: ["happy", "jumped", "over", "dog"], correct: "dog" },
+                { id: 3, subject: "Science", text: "What are the three states of matter?", options: ["Hot, Cold, Warm", "Rock, Water, Air", "Solid, Liquid, Gas", "Small, Medium, Large"], correct: "Solid, Liquid, Gas" },
+                { id: 4, subject: "Math", text: "What is 36 + 25?", options: ["51", "61", "511", "59"], correct: "61" },
+                { id: 5, subject: "English", text: "Which of these words is a VERB (an action word)?", options: ["Red", "Quickly", "Run", "Ball"], correct: "Run" },
+                { id: 6, subject: "Science", text: "Which planet is closest to the Sun?", options: ["Earth", "Mars", "Mercury", "Venus"], correct: "Mercury" },
+                { id: 7, subject: "Math", text: "What is 50 - 18?", options: ["32", "42", "22", "38"], correct: "32" },
+                { id: 8, subject: "English", text: "What punctuation mark should go at the end of this sentence: 'What time is it'", options: ["Period (.)", "Comma (,)", "Question Mark (?)", "Exclamation Point (!)"], correct: "Question Mark (?)", },
+                { id: 9, subject: "Science", text: "A caterpillar turns into what animal?", options: ["A frog", "A bird", "A butterfly", "A snake"], correct: "A butterfly" },
+                { id: 10, subject: "Math", text: "If a pizza has 8 slices and you eat 2, what fraction of the pizza did you eat?", options: ["1/8", "2/6", "2/8", "1/2"], correct: "2/8" },
+            ],
+            "Math-1": [
+                { id: 1, text: "What is 10 + 5?", options: ["10", "15", "20", "5"], correct: "15" },
+                { id: 2, text: "What is 22 + 11?", options: ["33", "23", "32", "11"], correct: "33" },
+                { id: 3, text: "What is 40 + 30?", options: ["60", "70", "80", "50"], correct: "70" },
+                { id: 4, text: "What is 51 + 12?", options: ["63", "62", "73", "53"], correct: "63" },
+                { id: 5, text: "What is 80 + 8?", options: ["8", "80", "88", "16"], correct: "88" },
+                { id: 6, text: "What is 15 + 13?", options: ["28", "27", "38", "22"], correct: "28" },
+                { id: 7, text: "What is 25 + 24?", options: ["48", "49", "50", "59"], correct: "49" },
+                { id: 8, text: "What is 60 + 20?", options: ["80", "70", "90", "40"], correct: "80" },
+                { id: 9, text: "What is 34 + 11?", options: ["55", "44", "45", "43"], correct: "45" },
+                { id: 10, text: "What is 72 + 27?", options: ["99", "98", "89", "100"], correct: "99" },
+            ],
+            "Math-2": [
+                { id: 1, text: "What is 15 - 5?", options: ["5", "15", "10", "0"], correct: "10" },
+                { id: 2, text: "What is 22 - 11?", options: ["11", "10", "22", "0"], correct: "11" },
+                { id: 3, text: "What is 40 - 30?", options: ["10", "20", "30", "0"], correct: "10" },
+                { id: 4, text: "What is 55 - 12?", options: ["43", "42", "33", "44"], correct: "43" },
+                { id: 5, text: "What is 88 - 8?", options: ["80", "8", "0", "88"], correct: "80" },
+                { id: 6, text: "What is 35 - 13?", options: ["22", "23", "12", "28"], correct: "22" },
+                { id: 7, text: "What is 49 - 24?", options: ["25", "24", "20", "35"], correct: "25" },
+                { id: 8, text: "What is 80 - 20?", options: ["40", "50", "60", "70"], correct: "60" },
+                { id: 9, text: "What is 34 - 11?", options: ["23", "22", "20", "13"], correct: "23" },
+                { id: 10, text: "What is 99 - 27?", options: ["72", "73", "62", "82"], correct: "72" },
+            ],
+            "Math-3": [
+                { id: 1, text: "What is 15 + 16?", options: ["31", "30", "21", "32"], correct: "31" },
+                { id: 2, text: "What is 28 + 12?", options: ["30", "40", "41", "39"], correct: "40" },
+                { id: 3, text: "What is 37 + 25?", options: ["52", "62", "63", "512"], correct: "62" },
+                { id: 4, text: "What is 49 + 9?", options: ["58", "57", "59", "50"], correct: "58" },
+                { id: 5, text: "What is 55 + 38?", options: ["83", "93", "94", "813"], correct: "93" },
+                { id: 6, text: "What is 67 + 23?", options: ["80", "90", "89", "91"], correct: "90" },
+                { id: 7, text: "What is 19 + 72?", options: ["91", "81", "90", "811"], correct: "91" },
+                { id: 8, text: "What is 88 + 12?", options: ["90", "100", "101", "99"], correct: "100" },
+                { id: 9, text: "What is 36 + 47?", options: ["83", "73", "84", "713"], correct: "83" },
+                { id: 10, text: "What is 45 + 45?", options: ["80", "90", "100", "810"], correct: "90" },
+            ],
+            "Math-4": [
+                { id: 1, text: "What is 31 - 16?", options: ["25", "15", "14", "21"], correct: "15" },
+                { id: 2, text: "What is 40 - 12?", options: ["28", "38", "32", "22"], correct: "28" },
+                { id: 3, text: "What is 62 - 25?", options: ["37", "47", "43", "33"], correct: "37" },
+                { id: 4, text: "What is 50 - 9?", options: ["41", "40", "59", "51"], correct: "41" },
+                { id: 5, text: "What is 93 - 38?", options: ["65", "55", "63", "53"], correct: "55" },
+                { id: 6, text: "What is 90 - 23?", options: ["67", "77", "73", "63"], correct: "67" },
+                { id: 7, text: "What is 91 - 72?", options: ["19", "29", "21", "11"], correct: "19" },
+                { id: 8, text: "What is 100 - 12?", options: ["88", "98", "89", "92"], correct: "88" },
+                { id: 9, text: "What is 83 - 47?", options: ["46", "36", "44", "34"], correct: "36" },
+                { id: 10, text: "What is 90 - 45?", options: ["45", "55", "50", "40"], correct: "45" },
+            ],
+            "Math-5": [
+                { id: 1, text: "What is 2 x 3?", options: ["5", "6", "4", "23"], correct: "6" },
+                { id: 2, text: "What is 4 x 0?", options: ["4", "40", "0", "1"], correct: "0" },
+                { id: 3, text: "What is 5 x 5?", options: ["10", "20", "25", "55"], correct: "25" },
+                { id: 4, text: "What is 3 x 1?", options: ["3", "1", "31", "4"], correct: "3" },
+                { id: 5, text: "What is 7 x 2?", options: ["9", "14", "16", "72"], correct: "14" },
+                { id: 6, text: "What is 10 x 2?", options: ["12", "20", "22", "102"], correct: "20" },
+                { id: 7, text: "What is 8 x 5?", options: ["13", "40", "45", "85"], correct: "40" },
+                { id: 8, text: "What is 9 x 1?", options: ["10", "8", "91", "9"], correct: "9" },
+                { id: 9, text: "What is 6 x 2?", options: ["8", "12", "14", "62"], correct: "12" },
+                { id: 10, text: "What is 4 x 5?", options: ["9", "20", "25", "45"], correct: "20" },
+            ],
+            "Math-6": [
+                { id: 1, text: "What is 6 x 6?", options: ["12", "36", "30", "66"], correct: "36" },
+                { id: 2, text: "What is 7 x 7?", options: ["14", "42", "49", "77"], correct: "49" },
+                { id: 3, text: "What is 8 x 8?", options: ["16", "64", "72", "88"], correct: "64" },
+                { id: 4, text: "What is 9 x 9?", options: ["18", "81", "90", "99"], correct: "81" },
+                { id: 5, text: "What is 10 x 10?", options: ["20", "100", "1000", "10"], correct: "100" },
+                { id: 6, text: "What is 6 x 7?", options: ["13", "42", "48", "36"], correct: "42" },
+                { id: 7, text: "What is 8 x 6?", options: ["14", "48", "54", "42"], correct: "48" },
+                { id: 8, text: "What is 9 x 7?", options: ["16", "63", "72", "56"], correct: "63" },
+                { id: 9, text: "What is 8 x 9?", options: ["17", "72", "81", "64"], correct: "72" },
+                { id: 10, text: "What is 10 x 8?", options: ["18", "80", "88", "108"], correct: "80" },
+            ],
+            "Math-7": [
+                { id: 1, text: "What is 10 ÷ 2?", options: ["5", "8", "12", "20"], correct: "5" },
+                { id: 2, text: "What is 12 ÷ 3?", options: ["3", "4", "15", "9"], correct: "4" },
+                { id: 3, text: "What is 20 ÷ 5?", options: ["4", "5", "15", "25"], correct: "4" },
+                { id: 4, text: "What is 9 ÷ 3?", options: ["6", "12", "3", "27"], correct: "3" },
+                { id: 5, text: "What is 16 ÷ 4?", options: ["4", "12", "20", "8"], correct: "4" },
+                { id: 6, text: "What is 30 ÷ 10?", options: ["300", "20", "40", "3"], correct: "3" },
+                { id: 7, text: "What is 25 ÷ 5?", options: ["5", "20", "30", "125"], correct: "5" },
+                { id: 8, text: "What is 14 ÷ 2?", options: ["12", "16", "7", "28"], correct: "7" },
+                { id: 9, text: "What is 40 ÷ 5?", options: ["8", "35", "45", "200"], correct: "8" },
+                { id: 10, text: "What is 100 ÷ 10?", options: ["1000", "10", "90", "110"], correct: "10" },
+            ],
+            "Math-8": [
+                { id: 1, text: "If a pizza is cut into 2 equal parts, what fraction is one part?", options: ["1/3", "1/2", "2/2", "2/1"], correct: "1/2" },
+                { id: 2, text: "What does the fraction 1/4 mean?", options: ["One of four equal parts", "One of three equal parts", "Four of one equal parts", "One whole"], correct: "One of four equal parts" },
+                { id: 3, text: "If you have a pie cut into 3 equal pieces and you eat 1, what fraction did you eat?", options: ["1/2", "1/3", "1/4", "3/1"], correct: "1/3" },
+                { id: 4, text: "Which is bigger, 1/2 or 1/3?", options: ["1/2", "1/3", "They are the same"], correct: "1/2" },
+                { id: 5, text: "What is the top number in a fraction called?", options: ["The bottom number", "The denominator", "The numerator", "The whole"], correct: "The numerator" },
+                { id: 6, text: "What is the bottom number in a fraction called?", options: ["The top number", "The denominator", "The numerator", "The part"], correct: "The denominator" },
+                { id: 7, text: "How do you write 'two-thirds' as a fraction?", options: ["2/3", "3/2", "2/2", "3/3"], correct: "2/3" },
+                { id: 8, text: "If you have 4 apples and 1 is green, what fraction of the apples is green?", options: ["4/1", "3/4", "1/4", "1/3"], correct: "1/4" },
+                { id: 9, text: "What does 2/2 mean?", options: ["One half", "One whole", "Two parts", "Zero"], correct: "One whole" },
+                { id: 10, text: "Which is smaller, 1/8 or 1/4?", options: ["1/8", "1/4", "They are the same"], correct: "1/8" },
+            ],
+            "Math-9": [
+                { id: 1, text: "How many pennies are in a dollar?", options: ["10", "50", "100", "1000"], correct: "100" },
+                { id: 2, text: "How many nickels are in a quarter?", options: ["5", "10", "2", "25"], correct: "5" },
+                { id: 3, text: "If you have 3 dimes and 1 nickel, how much money do you have?", options: ["25 cents", "31 cents", "35 cents", "40 cents"], correct: "35 cents" },
+                { id: 4, text: "What time is it if the big hand is on the 12 and the little hand is on the 3?", options: ["12:15", "12:03", "3:12", "3:00"], correct: "3:00" },
+                { id: 5, text: "What time is it if the big hand is on the 6 and the little hand is between the 4 and 5?", options: ["4:06", "6:04", "4:30", "5:30"], correct: "4:30" },
+                { id: 6, text: "How many minutes are in one hour?", options: ["30", "60", "90", "100"], correct: "60" },
+                { id: 7, text: "If you buy a toy for 75 cents and pay with a $1.00 bill, how much change do you get back?", options: ["15 cents", "20 cents", "25 cents", "50 cents"], correct: "25 cents" },
+                { id: 8, text: "How many quarters make $1.00?", options: ["2", "4", "5", "10"], correct: "4" },
+                { id: 9, text: "What time is 'quarter past 5'?", options: ["5:30", "5:45", "5:15", "6:15"], correct: "5:15" },
+                { id: 10, text: "If you have 2 quarters, 2 dimes, and 2 nickels, how much money do you have?", options: ["80 cents", "70 cents", "60 cents", "50 cents"], correct: "80 cents" },
+            ],
+            "Math-10": [
+                { id: 1, text: "Sam has 3 bags of apples. There are 5 apples in each bag. How many apples does Sam have in all?", options: ["8 apples", "15 apples", "2 apples", "35 apples"], correct: "15 apples" },
+                { id: 2, text: "Lisa had 24 cookies. She gave 10 cookies to her friend. How many cookies does Lisa have left?", options: ["14 cookies", "34 cookies", "10 cookies", "240 cookies"], correct: "14 cookies" },
+                { id: 3, text: "A bus has 15 seats. 8 students get on the bus. How many seats are empty?", options: ["23 seats", "15 seats", "7 seats", "8 seats"], correct: "7 seats" },
+                { id: 4, text: "There are 4 tables in the classroom. Each table has 4 chairs. How many chairs are there in total?", options: ["8 chairs", "16 chairs", "44 chairs", "12 chairs"], correct: "16 chairs" },
+                { id: 5, text: "Mike read 21 pages on Monday and 14 pages on Tuesday. How many pages did he read in all?", options: ["35 pages", "7 pages", "214 pages", "24 pages"], correct: "35 pages" },
+                { id: 6, text: "There are 18 cupcakes to be shared equally among 3 friends. How many cupcakes does each friend get?", options: ["6 cupcakes", "15 cupcakes", "21 cupcakes", "54 cupcakes"], correct: "6 cupcakes" },
+                { id: 7, text: "A farmer has 12 pigs and 7 chickens. How many more pigs than chickens does the farmer have?", options: ["19 animals", "5 animals", "12 animals", "7 animals"], correct: "5 animals" },
+                { id: 8, text: "Kate bought 3 packs of pencils. Each pack costs $2. How much did she spend in total?", options: ["$5", "$1", "$6", "$32"], correct: "$6" },
+                { id: 9, text: "There are 30 days in September. 7 days have already passed. How many days are left in September?", options: ["37 days", "23 days", "20 days", "30 days"], correct: "23 days" },
+                { id: 10, text: "A box can hold 6 eggs. How many boxes do you need to hold 24 eggs?", options: ["4 boxes", "30 boxes", "18 boxes", "144 boxes"], correct: "4 boxes" },
+            ],
+            // English quizzes...
+            "English-1": [
+                { id: 1, text: "Which spelling is correct?", options: ["friend", "freind", "frind"], correct: "friend" },
+                { id: 2, text: "Which spelling is correct?", options: ["becaus", "because", "becuz"], correct: "because" },
+                { id: 3, text: "Which spelling is correct?", options: ["people", "peeple", "peopel"], correct: "people" },
+                { id: 4, text: "Which spelling is correct?", options: ["their", "there", "they're"], correct: "their" },
+                { id: 5, text: "Which spelling is correct?", options: ["whent", "went", "weent"], correct: "went" },
+                { id: 6, text: "Which spelling is correct?", options: ["wich", "witch", "which"], correct: "which" },
+                { id: 7, text: "Which spelling is correct?", options: ["school", "scool", "skool"], correct: "school" },
+                { id: 8, text: "Which spelling is correct?", options: ["alot", "a lot", "allot"], correct: "a lot" },
+                { id: 9, text: "Which spelling is correct?", options: ["thay", "they", "tha"], correct: "they" },
+                { id: 10, text: "Which spelling is correct?", options: ["wuz", "was", "whas"], correct: "was" },
+            ],
+            "English-2": [
+                { id: 1, text: "What is the meaning of the word 'enormous'?", options: ["Very small", "Very big", "Very quiet", "Very fast"], correct: "Very big" },
+                { id: 2, text: "If you are 'joyful', how do you feel?", options: ["Sad", "Tired", "Happy", "Angry"], correct: "Happy" },
+                { id: 3, text: "What does 'difficult' mean?", options: ["Easy", "Hard", "Soft", "Long"], correct: "Hard" },
+                { id: 4, text: "If a turtle moves 'slowly', it moves...", options: ["Not fast", "Not quietly", "Not sadly", "Not up"], correct: "Not fast" },
+                { id: 5, text: "What is a 'synonym' for 'scared'?", options: ["Brave", "Afraid", "Happy", "Tired"], correct: "Afraid" },
+                { id: 6, text: "What is an 'antonym' (opposite) for 'hot'?", options: ["Warm", "Cold", "Spicy", "Fire"], correct: "Cold" },
+                { id: 7, text: "If you 'shout', you are speaking...", options: ["Loudly", "Softly", "Quickly", "Sadly"], correct: "Loudly" },
+                { id: 8, text: "What does the word 'delicious' mean?", options: ["Tastes bad", "Tastes good", "Smells bad", "Smells good"], correct: "Tastes good" },
+                { id: 9, text: "If you 'notice' something, you...", options: ["Forget it", "Lose it", "See it", "Break it"], correct: "See it" },
+                { id: 10, text: "What is the meaning of 'ancient'?", options: ["Very new", "Very old", "Very clean", "Very broken"], correct: "Very old" },
+            ],
+            "English-3": [
+                { id: 1, text: "Which word is a noun? 'The cat slept.'", options: ["The", "cat", "slept"], correct: "cat" },
+                { id: 2, text: "Which word is a noun? 'I go to school.'", options: ["I", "go", "to", "school"], correct: "school" },
+                { id: 3, text: "Which word is a noun? 'My teacher is nice.'", options: ["My", "teacher", "is", "nice"], correct: "teacher" },
+                { id: 4, text: "Which word is a noun? 'He threw the ball.'", options: ["He", "threw", "the", "ball"], correct: "ball" },
+                { id: 5, text: "A noun is a person, ___, or thing.", options: ["action", "place", "feeling", "color"], correct: "place" },
+                { id: 6, text: "Which word is a noun? 'We live in a house.'", options: ["We", "live", "in", "house"], correct: "house" },
+                { id: 7, text: "Which word is NOT a noun?", options: ["dog", "park", "jump", "boy"], correct: "jump" },
+                { id: 8, text: "Which word is a noun? 'She has a red bike.'", options: ["She", "has", "red", "bike"], correct: "bike" },
+                { id: 9, text: "Which word is a noun? 'Dad is cooking dinner.'", options: ["Dad", "is", "cooking", "dinner"], correct: "Dad" },
+                { id: 10, text: "Which of these is a noun?", options: ["eat", "pretty", "friend", "fast"], correct: "friend" },
+            ],
+            "English-4": [
+                { id: 1, text: "Which word is a verb? 'The cat slept.'", options: ["The", "cat", "slept"], correct: "slept" },
+                { id: 2, text: "Which word is a verb? 'I go to school.'", options: ["I", "go", "to", "school"], correct: "go" },
+                { id: 3, text: "Which word is a verb? 'My teacher is nice.'", options: ["My", "teacher", "is", "nice"], correct: "is" },
+                { id: 4, text: "Which word is a verb? 'He threw the ball.'", options: ["He", "threw", "the", "ball"], correct: "threw" },
+                { id: 5, text: "A verb is often an ___ word.", options: ["action", "person", "thing", "describing"], correct: "action" },
+                { id: 6, text: "Which word is a verb? 'We live in a house.'", options: ["We", "live", "in", "house"], correct: "live" },
+                { id: 7, text: "Which word is NOT a verb?", options: ["dog", "run", "jump", "eat"], correct: "dog" },
+                { id: 8, text: "Which word is a verb? 'She has a red bike.'", options: ["She", "has", "red", "bike"], correct: "has" },
+                { id: 9, text: "Which word is a verb? 'Dad is cooking dinner.'", options: ["Dad", "is", "cooking", "dinner"], correct: "cooking" },
+                { id: 10, text: "Which of these is a verb?", options: ["walk", "pretty", "friend", "book"], correct: "walk" },
+            ],
+            "English-5": [
+                { id: 1, text: "Which word is an adjective? 'The red car is fast.'", options: ["red", "car", "is", "fast"], correct: "red" },
+                { id: 2, text: "Which word is an adjective? 'I have a happy dog.'", options: ["I", "have", "happy", "dog"], correct: "happy" },
+                { id: 3, text: "An adjective describes a ___.", options: ["verb", "noun", "adverb", "preposition"], correct: "noun" },
+                { id: 4, text: "Which word is an adverb? 'The cat ran quickly.'", options: ["The", "cat", "ran", "quickly"], correct: "quickly" },
+                { id: 5, text: "Which word is an adverb? 'He shouted loudly.'", options: ["He", "shouted", "loudly", "He shouted"], correct: "loudly" },
+                { id: 6, text: "An adverb often describes a ___.", options: ["verb", "noun", "pronoun", "house"], correct: "verb" },
+                { id: 7, text: "Which word is an adjective? 'She ate a delicious cookie.'", options: ["She", "ate", "delicious", "cookie"], correct: "delicious" },
+                { id: 8, text: "Which word is an adverb? 'Please sit quietly.'", options: ["Please", "sit", "quietly", "Please sit"], correct: "quietly" },
+                { id: 9, text: "Which word is an adjective? 'It is a sunny day.'", options: ["It", "is", "sunny", "day"], correct: "sunny" },
+                { id: 10, text: "Many adverbs end in what two letters?", options: ["-ed", "-ing", "-ly", "-s"], correct: "-ly" },
+            ],
+            "English-6": [
+                { id: 1, text: "What punctuation goes at the end of this sentence: 'The dog is brown'", options: [".", "?", "!", ","], correct: "." },
+                { id: 2, text: "What punctuation goes at the end of this sentence: 'What is your name'", options: [".", "?", "!", ","], correct: "?" },
+                { id: 3, text: "What punctuation goes at the end of this sentence: 'Wow, that's amazing'", options: [".", "?", "!", ","], correct: "!" },
+                { id: 4, text: "Which punctuation mark is a 'period'?", options: [",", "!", ".", "?"], correct: "." },
+                { id: 5, text: "Which punctuation mark is a 'question mark'?", options: [".", "!", ",", "?"], correct: "?" },
+                { id: 6, text: "Which punctuation is missing? 'I like to eat apples___ bananas, and grapes.'", options: [".", "?", "!", ","], correct: "," },
+                { id: 7, text: "A ___ is used to separate items in a list.", options: ["period", "comma", "question mark", "exclamation point"], correct: "comma" },
+                { id: 8, text: "What punctuation goes at the end of a 'telling' sentence?", options: [".", "?", "!"], correct: "." },
+                { id: 9, text: "What punctuation goes at the end of an 'asking' sentence?", options: [".", "?", "!"], correct: "?" },
+                { id: 10, text: "What punctuation goes at the end of an 'exciting' sentence?", options: [".", "?", "!"], correct: "!" },
+            ],
+            "English-7": [
+                { id: 1, text: "Which word should be capitalized? 'My friend bill lives in texas.'", options: ["friend", "bill", "lives", "texas"], correct: "bill" },
+                { id: 2, text: "Which word should be capitalized? 'My friend bill lives in texas.'", options: ["friend", "bill", "lives", "texas"], correct: "texas" },
+                { id: 3, text: "Which word should be capitalized? 'we are going to the park.'", options: ["we", "are", "going", "park"], correct: "we" },
+                { id: 4, text: "Which word should be capitalized? 'Her name is sara.'", options: ["her", "name", "is", "sara"], correct: "sara" },
+                { id: 5, text: "Which word should be capitalized? 'I live in glen burnie, maryland.'", options: ["live", "in", "glen burnie", "maryland"], correct: "glen burnie" },
+                { id: 6, text: "Which word should be capitalized? 'I live in glen burnie, maryland.'", options: ["live", "in", "glen burnie", "maryland"], correct: "maryland" },
+                { id: 7, text: "You should always capitalize the name of a ___.", options: ["person", "book", "chair", "game"], correct: "person" },
+                { id: 8, text: "You should always capitalize the ___ word in a sentence.", options: ["last", "first", "middle", "biggest"], correct: "first" },
+                { id: 9, "text": "Which holiday should be capitalized?", options: ["birthday", "vacation", "christmas", "weekend"], correct: "christmas" },
+                { id: 10, text: "Which word should be capitalized? 'The dog's name is spot.'", options: ["The", "dog's", "name", "spot"], correct: "spot" },
+            ],
+            "English-8": [
+                { id: 1, text: "STORY: 'The little cat was stuck in a tree. He was crying. A firefighter came and climbed up to get him.' What is the MAIN IDEA of this story?", options: ["The cat was little.", "A firefighter helped a cat.", "Firefighters climb trees.", "Cats can cry."], correct: "A firefighter helped a cat." },
+                { id: 2, text: "STORY: 'The little cat was stuck in a tree. He was crying. A firefighter came and climbed up to get him.' Who got the cat from the tree?", options: ["The cat", "A firefighter", "A little boy", "A tree"], correct: "A firefighter" },
+                { id: 3, text: "STORY: 'The little cat was stuck in a tree. He was crying. A firefighter came and climbed up to get him.' Where was the cat stuck?", options: ["In a house", "On a roof", "In a tree", "Under a car"], correct: "In a tree" },
+                { id: 4, text: "STORY: 'Sam went to the store. He bought apples, bananas, and milk.' What did Sam buy?", options: ["Bread and eggs", "Apples and cheese", "Apples, bananas, and milk", "Only milk"], correct: "Apples, bananas, and milk" },
+                { id: 5, text: "STORY: 'Sam went to the store. He bought apples, bananas, and milk.' Where did Sam go?", options: ["To the park", "To school", "To the store", "To his house"], correct: "To the store" },
+                { id: 6, text: "STORY: 'It was a hot, sunny day. We went to the beach and played in the water.' What was the weather like?", options: ["Cold and rainy", "Hot and sunny", "Snowy", "Windy"], correct: "Hot and sunny" },
+                { id: 7, text: "STORY: 'It was a hot, sunny day. We went to the beach and played in the water.' Where did they go?", options: ["To the movies", "To the mountains", "To the beach", "To the store"], correct: "To the beach" },
+                { id: 8, text: "STORY: 'A dog was barking at a mailman. The mailman looked scared, so he gave the dog a treat.' Why did the mailman give the dog a treat?", options: ["Because the dog was quiet", "Because he was scared", "Because he liked the dog", "Because the dog was hungry"], correct: "Because he was scared" },
+                { id: 9, text: "STORY: 'A dog was barking at a mailman. The mailman looked scared, so he gave the dog a treat.' Who was barking?", options: ["The mailman", "A cat", "A dog", "A treat"], correct: "A dog" },
+                { id: 10, text: "STORY: 'The bird built a nest in the big, green tree. Soon, there were three blue eggs in the nest.' What color were the eggs?", options: ["Green", "Blue", "White", "Big"], correct: "Blue" },
+            ],
+            "English-9": [
+                { id: 1, text: "STORY: 'Lily woke up and saw snow outside. She cheered, 'No school today!' and ran to get her sled.' How does Lily feel?", options: ["Sad", "Tired", "Excited", "Angry"], correct: "Excited" },
+                { id: 2, text: "STORY: 'Lily woke up and saw snow outside. She cheered, 'No school today!' and ran to get her sled.' What did Lily want to do?", options: ["Read a book", "Go to school", "Go sledding", "Take a nap"], correct: "Go sledding" },
+                { id: 3, text: "STORY: 'Tom's ice cream cone fell on the ground. He started to cry.' How does Tom feel?", options: ["Happy", "Funny", "Sad", "Silly"], correct: "Sad" },
+                { id: 4, text: "STORY: 'The movie was very loud. Ben covered his ears and closed his eyes.' What can you INFER about Ben?", options: ["He liked the movie", "He was tired", "He was hungry", "He didn't like the loud noise"], correct: "He didn't like the loud noise" },
+                { id: 5, text: "STORY: 'When the mailman came, the dog wagged his tail and ran to the door.' What can you INFER about the dog?", options: ["He is angry at the mailman", "He is scared of the mailman", "He is happy to see the mailman", "He wants to go outside"], correct: "He is happy to see the mailman" },
+                { id: 6, text: "STORY: 'Ana packed a sandwich, an apple, and a juice box. She put them in her backpack.' Where is Ana probably going?", options: ["To bed", "To a party", "To school", "To the store"], correct: "To school" },
+                { id: 7, text: "STORY: 'The boat rocked back and forth on the big waves. The sky got dark, and the wind blew hard.' What is the weather like?", options: ["Calm and sunny", "Snowy", "Stormy", "Hot"], correct: "Stormy" },
+                { id: 8, text: "STORY: 'Dad looked at the broken lamp and then at the baseball on the floor. 'Timmy!' he called.' What can you INFER?", options: ["Timmy broke the lamp with the baseball", "Dad broke the lamp", "The dog broke the lamp", "Timmy bought a new lamp"], correct: "Timmy broke the lamp with the baseball" },
+                { id: 9, text: "STORY: 'Sara's stomach rumbled loudly. She looked at the clock. It said 12:00 PM.' What can you INFER about Sara?", options: ["She is tired", "She is happy", "She is hungry", "She is late"], correct: "She is hungry" },
+                { id: 10, text: "STORY: 'The zookeeper gave the monkey a banana. The monkey clapped its hands and ate it.' How did the monkey feel?", options: ["Sad", "Angry", "Happy", "Tired"], correct: "Happy" },
+            ],
+            "English-10": [
+                { id: 1, text: "PROMPT: 'Write a sentence about your favorite animal.' Which is the BEST sentence?", options: ["Dog.", "I like dogs because they are fun.", "My favorite animal is a dog.", "My favorite animal is a dog they are fun to play with."], correct: "My favorite animal is a dog." },
+                { id: 2, text: "PROMPT: 'Write a sentence about what you did this weekend.' Which is the BEST sentence?", options: ["Went to the park.", "it was fun.", "This weekend, I went to the park with my family.", "i went to the park"], correct: "This weekend, I went to the park with my family." },
+                { id: 3, text: "PROMPT: 'What is your favorite food?' Which is the BEST answer?", options: ["Pizza.", "My favorite food is pizza because I love the cheesy taste.", "I like pizza.", "pizza is good"], correct: "My favorite food is pizza because I love the cheesy taste." },
+                { id: 4, text: "PROMPT: 'Describe your best friend.' Which is a good DESCRIBING word?", options: ["Friend", "Kind", "Walk", "He"], correct: "Kind" },
+                { id: 5, text: "PROMPT: 'Write a story about a magical tree.' What should be the FIRST sentence?", options: ["The tree was green.", "Once upon a time, there was a tree that could talk.", "He climbed the tree.", "The end."], correct: "Once upon a time, there was a tree that could talk." },
+                { id: 6, text: "Which sentence is a complete sentence?", options: ["Ran to the store.", "The girl.", "The girl ran to the store.", "To the store."], correct: "The girl ran to the store." },
+                { id: 7, text: "Which sentence is a complete sentence?", options: ["My dog.", "Is brown.", "My dog is brown.", "Brown dog."], correct: "My dog is brown." },
+                { id: 8, text: "PROMPT: 'Write about your favorite holiday.' Which is the BEST topic sentence?", options: ["I like presents.", "My favorite holiday is Christmas.", "Christmas is in December.", "We eat turkey."], correct: "My favorite holiday is Christmas." },
+                { id: 9, text: "PROMPT: 'What do you want to be when you grow up?' Which is the BEST answer?", options: ["A doctor.", "When I grow up, I want to be a doctor to help sick people.", "I want to be a doctor.", "helping people."], correct: "When I grow up, I want to be a doctor to help sick people." },
+                { id: 10, text: "Which sentence is a complete sentence?", options: ["She is nice.", "Nice girl.", "Is very nice.", "She nice."], correct: "She is nice." },
+            ],
+            // Science quizzes...
+            "Science-1": [
+                { id: 1, text: "Which of these is a LIVING thing?", options: ["A rock", "A flower", "A toy car", "A pencil"], correct: "A flower" },
+                { id: 2, text: "Which of these is a NON-LIVING thing?", options: ["A tree", "A bird", "A computer", "A fish"], correct: "A computer" },
+                { id: 3, text: "What do all living things need to survive?", options: ["Video games", "Water and food", "Blankets", "Cars"], correct: "Water and food" },
+                { id: 4, text: "Which of these is something only living things can do?", options: ["Change color", "Grow", "Get wet", "Move"], correct: "Grow" },
+                { id: 5, text: "Is a seed a living or non-living thing?", options: ["Living (it can grow)", "Non-living (it is hard)", "Both", "Neither"], correct: "Living (it can grow)" },
+                { id: 6, text: "Which of these is a LIVING thing?", options: ["A cloud", "A butterfly", "The sun", "A river"], correct: "A butterfly" },
+                { id: 7, text: "Which of these is a NON-LIVING thing?", options: ["A mushroom", "A baby", "A glass of water", "A spider"], correct: "A glass of water" },
+                { id: 8, text: "Living things ___ to make more of their own kind.", options: ["reproduce", "run", "sleep", "eat"], correct: "reproduce" },
+                { id: 9, text: "Is a bicycle living or non-living?", options: ["Living", "Non-living"], correct: "Non-living" },
+                { id: 10, text: "Is a dog living or non-living?", options: ["Living", "Non-living"], correct: "Living" },
+            ],
+            "Science-2": [
+                { id: 1, text: "What is the first stage of a plant's life cycle?", options: ["Flower", "Seed", "Sprout", "Big tree"], correct: "Seed" },
+                { id: 2, text: "What does a seed need to grow?", options: ["Sunlight, water, and soil", "Moonlight and sugar", "Rocks and wind", "Only darkness"], correct: "Sunlight, water, and soil" },
+                { id: 3, text: "When a seed first starts to grow, it becomes a ___.", options: ["flower", "sprout (or seedling)", "fruit", "leaf"], correct: "sprout (or seedling)" },
+                { id: 4, "text": "What part of the plant grows down into the soil to get water?", options: ["Leaves", "Stem", "Flower", "Roots"], correct: "Roots" },
+                { id: 5, text: "What part of the plant holds it up straight and tall?", options: ["Leaves", "Stem", "Flower", "Roots"], correct: "Stem" },
+                { id: 6, text: "What part of the plant makes food from sunlight?", options: ["Leaves", "Stem", "Flower", "Roots"], correct: "Leaves" },
+                { id: 7, text: "What is the colorful part of a plant that attracts bees?", options: ["Leaves", "Stem", "Flower", "Roots"], correct: "Flower" },
+                { id: 8, text: "What part of the plant often holds the seeds?", options: ["Leaves", "Stem", "Fruit", "Roots"], correct: "Fruit" },
+                { id: 9, text: "What is the process called when a seed starts to grow?", options: ["Sleeping", "Germination", "Pollination", "Wilting"], correct: "Germination" },
+                { id: 10, text: "What do flowers make that helps other flowers grow?", options: ["Pollen", "Water", "Soil", "Sunlight"], correct: "Pollen" },
+            ],
+            "Science-3": [
+                { id: 1, text: "What is the first stage in a butterfly's life cycle?", options: ["Butterfly", "Caterpillar", "Chrysalis", "Egg"], correct: "Egg" },
+                { id: 2, text: "What hatches from a butterfly egg?", options: ["A small butterfly", "A caterpillar (larva)", "A chrysalis", "A moth"], correct: "A caterpillar (larva)" },
+                { id: 3, text: "What does a caterpillar do most of the time?", options: ["Sleep", "Fly", "Eat leaves", "Swim"], correct: "Eat leaves" },
+                { id: 4, text: "What is the hard shell a caterpillar forms around itself called?", options: ["A chrysalis (pupa)", "A cocoon", "An egg", "A nest"], correct: "A chrysalis (pupa)" },
+                { id: 5, text: "The change from a caterpillar to a butterfly is called ___.", options: ["germination", "metamorphosis", "photosynthesis", "hibernation"], correct: "metamorphosis" },
+                { id: 6, text: "What is the first stage in a frog's life cycle?", options: ["Frog", "Tadpole", "Egg (frog spawn)", "Froglet"], correct: "Egg (frog spawn)" },
+                { id: 7, text: "What hatches from a frog's egg?", options: ["A small frog", "A tadpole", "A lizard", "A fish"], correct: "A tadpole" },
+                { id: 8, text: "How does a tadpole breathe?", options: ["With lungs", "With gills (like a fish)", "Through its skin", "It doesn't breathe"], correct: "With gills (like a fish)" },
+                { id: 9, text: "What is a 'froglet'?", options: ["A baby frog with legs and a tail", "A tadpole", "A full-grown frog", "A frog egg"], correct: "A baby frog with legs and a tail" },
+                { id: 10, text: "How is a baby mammal (like a puppy) born?", options: ["From an egg", "From a chrysalis", "Born live from its mother", "From a seed"], correct: "Born live from its mother" },
+            ],
+            "Science-4": [
+                { id: 1, text: "Where would you find a polar bear?", options: ["In the desert", "In the ocean", "In the arctic (cold)", "In the jungle"], correct: "In the arctic (cold)" },
+                { id: 2, text: "Where would you find a camel?", options: ["In the desert (hot and dry)", "In the arctic", "In the ocean", "In a pond"], correct: "In the desert (hot and dry)" },
+                { id: 3, text: "What is the 'habitat' of a fish?", options: ["The forest", "The desert", "The sky", "The water (ocean, lake, river)"], correct: "The water (ocean, lake, river)" },
+                { id: 4, text: "A monkey's habitat is usually a ___.", options: ["jungle or forest", "cold tundra", "dry desert", "city street"], correct: "jungle or forest" },
+                { id: 5, text: "What is a habitat?", options: ["An animal's food", "An animal's home", "An animal's name", "An animal's color"], correct: "An animal's home" },
+                { id: 6, text: "Why do cacti (cactuses) grow in the desert?", options: ["They like the cold", "They don't need much water", "They need to swim", "They like the snow"], correct: "They don't need much water" },
+                { id: 7, text: "What kind of habitat is very wet and has many tall trees?", options: ["A desert", "A rainforest (jungle)", "The arctic", "A grassland"], correct: "A rainforest (jungle)" },
+                { id: 8, text: "What animal is suited for a grassland (savanna) habitat?", options: ["A penguin", "A lion", "A whale", "A starfish"], correct: "A lion" },
+                { id: 9, text: "Why does a polar bear have thick white fur?", options: ["To stay warm and blend in with snow", "To stay cool", "To blend in with trees", "To swim faster"], correct: "To stay warm and blend in with snow" },
+                { id: 10, text: "What is an animal's 'adaptation'?", options: ["A special feature that helps it survive", "Its name", "Its food", "Its baby"], correct: "A special feature that helps it survive" },
+            ],
+            "Science-5": [
+                { id: 1, text: "Where does almost all energy in a food chain come from?", options: ["The moon", "The rocks", "The sun", "The water"], correct: "The sun" },
+                { id: 2, text: "What is a 'producer' in a food chain?", options: ["An animal that eats other animals", "An animal that eats plants", "A plant (it produces its own food)", "An animal that hunts"], correct: "A plant (it produces its own food)" },
+                { id: 3, text: "What is a 'consumer'?", options: ["A plant", "The sun", "An animal that eats plants or other animals", "A rock"], correct: "An animal that eats plants or other animals" },
+                { id: 4, text: "An animal that eats ONLY plants is called a ___.", options: ["carnivore", "herbivore", "omnivore", "producer"], correct: "herbivore" },
+                { id: 5, text: "An animal that eats ONLY other animals is called a ___.", options: ["carnivore", "herbivore", "omnivore", "producer"], correct: "carnivore" },
+                { id: 6, text: "An animal that eats BOTH plants and animals is called a ___.", options: ["carnivore", "herbivore", "omnivore", "producer"], correct: "omnivore" },
+                { id: 7, text: "In the food chain: Grass -> Rabbit -> Fox. What is the producer?", options: ["Grass", "Rabbit", "Fox", "The sun"], correct: "Grass" },
+                { id: 8, text: "In the food chain: Grass -> Rabbit -> Fox. What does the rabbit eat?", options: ["The fox", "The grass", "The sun", "Nothing"], correct: "The grass" },
+                { id: 9, text: "In the food chain: Grass -> Rabbit -> Fox. What does the fox eat?", options: ["The fox", "The grass", "The rabbit", "The sun"], correct: "The rabbit" },
+                { id: 10, text: "What is a 'predator'?", options: ["An animal that is hunted", "An animal that hunts other animals", "An animal that eats plants", "A plant"], correct: "An animal that hunts other animals" },
+            ],
+            "Science-6": [
+                { id: 1, text: "What is at the center of our solar system?", options: ["The Earth", "The Moon", "The Sun", "Mars"], correct: "The Sun" },
+                { id: 2, text: "What is the third planet from the Sun?", options: ["Venus", "Mars", "Earth", "Jupiter"], correct: "Earth" },
+                { id: 3, text: "Which planet is known as the 'Red Planet'?", options: ["Mars", "Venus", "Jupiter", "Saturn"], correct: "Mars" },
+                { id: 4, text: "What is the largest planet in our solar system?", options: ["Earth", "Saturn", "Jupiter", "Neptune"], correct: "Jupiter" },
+                { id: 5, text: "Which planet is famous for its big rings?", options: ["Mars", "Saturn", "Earth", "Mercury"], correct: "Saturn" },
+                { id: 6, text: "What do we call the path a planet takes around the sun?", options: ["An orbit", "A line", "A circle", "A road"], correct: "An orbit" },
+                { id: 7, text: "What object orbits the Earth?", options: ["The Sun", "The Moon", "Mars", "Venus"], correct: "The Moon" },
+                { id: 8, text: "Which planet is closest to the Sun?", options: ["Earth", "Mercury", "Venus", "Mars"], correct: "Mercury" },
+                { id: 9, text: "How many planets are in our solar system?", options: ["7", "8", "9", "10"], correct: "8" },
+                { id: 10, text: "Are stars planets?", options: ["Yes", "No, stars make their own light (like the Sun)", "Only some of them", "Only the hot ones"], correct: "No, stars make their own light (like the Sun)" },
+            ],
+            "Science-7": [
+                { id: 1, text: "What causes day and night on Earth?", options: ["The Earth moving around the Sun", "The Earth spinning (rotating)", "The Moon covering the Sun", "The Sun turning off"], correct: "The Earth spinning (rotating)" },
+                { id: 2, text: "How long does it take for the Earth to spin around one time?", options: ["1 year", "1 month", "1 hour", "1 day (24 hours)"], correct: "1 day (24 hours)" },
+                { id: 3, text: "What is it called when your side of the Earth is facing the Sun?", options: ["Night", "Day", "Winter", "Summer"], correct: "Day" },
+                { id: 4, text: "What is it called when your side of the Earth is facing away from the Sun?", options: ["Night", "Day", "Winter", "Summer"], correct: "Night" },
+                { id: 5, text: "Does the Sun move around the Earth?", options: ["Yes, every day", "No, the Earth moves around the Sun", "Only at night", "Only in the summer"], correct: "No, the Earth moves around the Sun" },
+                { id: 6, text: "The imaginary line the Earth spins on is called its ___.", options: ["orbit", "axis", "equator", "pole"], correct: "axis" },
+                { id: 7, text: "Why does the Sun appear to 'rise' in the east and 'set' in the west?", options: ["Because the Sun is moving west", "Because the Earth is spinning", "Because the Moon is pushing it", "It's magic"], correct: "Because the Earth is spinning" },
+                { id: 8, text: "How long does it take the Earth to orbit (travel around) the Sun?", options: ["1 day", "1 week", "1 month", "1 year (365 days)"], correct: "1 year (365 days)" },
+                { id: 9, text: "What causes the seasons (winter, spring, summer, fall)?", options: ["The Earth spinning", "The Earth's tilt and its orbit", "The Moon", "The clouds"], correct: "The Earth's tilt and its orbit" },
+                { id: 10, text: "When it is day in America, what is it on the other side of the world (like China)?", options: ["Day", "Night", "Summer", "Winter"], correct: "Night" },
+            ],
+            "Science-8": [
+                { id: 1, text: "What are the four seasons?", options: ["Hot, Cold, Wet, Dry", "Day, Night, Morning, Evening", "Spring, Summer, Fall, Winter", "Sun, Rain, Snow, Wind"], correct: "Spring, Summer, Fall, Winter" },
+                { id: 2, text: "Which season is usually the warmest?", options: ["Spring", "Summer", "Fall", "Winter"], correct: "Summer" },
+                { id: 3, "text": "Which season is usually the coldest?", options: ["Spring", "Summer", "Fall", "Winter"], correct: "Winter" },
+                { id: 4, text: "What is 'weather'?", options: ["What is happening in the air (sky) right now", "What season it is", "What planet we are on", "What time it is"], correct: "What is happening in the air (sky) right now" },
+                { id: 5, text: "What tool do we use to measure temperature (how hot or cold it is)?", options: ["A ruler", "A clock", "A thermometer", "A wind vane"], correct: "A thermometer" },
+                { id: 6, text: "What is 'precipitation'?", options: ["Sunlight", "Wind", "Water falling from the sky (rain, snow)", "Clouds"], correct: "Water falling from the sky (rain, snow)" },
+                { id: 7, text: "What are clouds made of?", options: ["Smoke", "Tiny water droplets or ice crystals", "Cotton", "Air"], correct: "Tiny water droplets or ice crystals" },
+                { id: 8, text: "What happens to many trees in the 'fall' (autumn) season?", options: ["Their leaves grow", "They get flowers", "Their leaves change color and fall off", "They get fruit"], correct: "Their leaves change color and fall off" },
+                { id: 9, text: "What is moving air called?", options: ["Wind", "Rain", "Snow", "Sun"], correct: "Wind" },
+                { id: 10, text: "What is the 'water cycle'?", options: ["How water moves from the ground to the sky and back", "How we drink water", "How fish swim", "How boats float"], correct: "How water moves from the ground to the sky and back" },
+            ],
+            "Science-9": [
+                { id: 1, text: "What are the three states of matter?", options: ["Hot, Cold, Warm", "Hard, Soft, Bumpy", "Solid, Liquid, Gas", "Big, Small, Medium"], correct: "Solid, Liquid, Gas" },
+                { id: 2, text: "Which is an example of a 'solid'?", options: ["Water", "Air", "An ice cube", "Steam"], correct: "An ice cube" },
+                { id: 3, text: "Which is an example of a 'liquid'?", options: ["A rock", "Milk", "A balloon", "Wood"], correct: "Milk" },
+                { id: 4, text: "Which is an example of a 'gas'?", options: ["A book", "Juice", "A chair", "The air we breathe"], correct: "The air we breathe" },
+                { id: 5, text: "What happens when you heat a solid (like ice)?", options: ["It melts into a liquid", "It freezes", "It disappears", "It gets harder"], correct: "It melts into a liquid" },
+                { id: 6, text: "What happens when you heat a liquid (like water) a lot?", options: ["It freezes", "It evaporates into a gas (steam)", "It turns solid", "It disappears"], correct: "It evaporates into a gas (steam)" },
+                { id: 7, text: "What happens when you cool a liquid (like water)?", options: ["It freezes into a solid (ice)", "It boils", "It turns into a gas", "It disappears"], correct: "It freezes into a solid (ice)" },
+                { id: 8, text: "What happens when you cool a gas (like steam)?", options: ["It condenses into a liquid", "It boils", "It turns solid", "It disappears"], correct: "It condenses into a liquid" },
+                { id: 9, text: "Which state of matter takes the shape of its container AND fills the whole container?", options: ["Solid", "Liquid", "Gas"], correct: "Gas" },
+                { id: 10, text: "Which state of matter takes the shape of its container but does NOT fill the whole container?", options: ["Solid", "Liquid", "Gas"], correct: "Liquid" },
+            ],
+            "Science-10": [
+                { id: 1, text: "Which of these is a 'lever'?", options: ["A slide", "A seesaw", "A wheel", "A screw"], correct: "A seesaw" },
+                { id: 2, text: "Which of these is an 'inclined plane'?", options: ["A ramp", "A pulley", "A seesaw", "A wagon"], correct: "A ramp" },
+                { id: 3, text: "How does a ramp (inclined plane) make work easier?", options: ["It lets you lift things straight up", "It gives you a longer, gentler path to move things up", "It cuts things", "It holds things together"], correct: "It gives you a longer, gentler path to move things up" },
+                { id: 4, text: "What simple machine is used to lift a flag up a flagpole?", options: ["A lever", "A wheel and axle", "A pulley", "A wedge"], correct: "A pulley" },
+                { id: 5, text: "What simple machine is a 'wheel and axle'?", options: ["A doorknob", "A knife", "A ramp", "A seesaw"], correct: "A doorknob" },
+                { id: 6, text: "What simple machine is used to cut things or split things apart?", options: ["A wedge (like a knife or an axe)", "A screw", "A pulley", "A lever"], correct: "A wedge (like a knife or an axe)" },
+                { id: 7, text: "What simple machine is like a ramp wrapped around a pole?", options: ["A lever", "A pulley", "A wedge", "A screw"], correct: "A screw" },
+                { id: 8, text: "What simple machine helps you open a bottle cap?", options: ["A lever (bottle opener)", "A pulley", "A ramp", "A wheel"], correct: "A lever (bottle opener)" },
+                { id: 9, text: "A zipper is made of many small ___.", options: ["levers", "pulleys", "wedges", "screws"], correct: "wedges" },
+                { id: 10, text: "What two simple machines make a pair of scissors?", options: ["Two levers and two wedges", "A screw and a pulley", "A ramp and a wheel", "Two pulleys"], correct: "Two levers and two wedges" },
+            ]
+        };
+        
+
+        // --- Registration Page Component ---
+        function AuthPage({ onStart, examResults, clearedForRetake, quizLevel }) {
+          const [authMode, setAuthMode] = useState("signup"); // 'signup' or 'signin'
+          const [name, setName] = useState("");
+          const [email, setEmail] = useState("");
+          const [password, setPassword] = useState("");
+          const [confirmPassword, setConfirmPassword] = useState("");
+          const [error, setError] = useState("");
+        
+          const handleStart = () => {
+            // Basic validation
+            if (!email || !password) {
+              setError("Please fill in all required fields.");
+              return;
+            }
+            if (!/\S+@\S+\.\S+/.test(email)) {
+              setError("Please enter a valid email address.");
+              return;
+            }
+        
+            let userName = name;
+        
+            if (authMode === "signup") {
+              if (!name) {
+                setError("Please enter your full name.");
+                return;
+              }
+              if (password !== confirmPassword) {
+                setError("Passwords do not match.");
+                return;
+              }
+              // In a real app, you'd register the user here
+            } else {
+              // For sign-in, we don't have the name, so let's derive one from the email
+              // In a real app, you'd fetch the user's name from your database
+              userName = email.split("@")[0];
+              // In a real app, you'd validate credentials here
+            }
+            
+            // --- PERMISSION CHECK ---
+            // Check if this user has a previous submission
+            const previousSubmission = examResults.find(r => r.user.email === email && r.quizLevel === quizLevel);
+            
+            if (previousSubmission) {
+              // User has taken this *specific* exam. Check if they are cleared for a retake.
+              // We'll create a unique key for this user and quiz
+              const retakeKey = `${email}|${quizLevel}`;
+              const isCleared = clearedForRetake.includes(retakeKey);
+              
+              if (!isCleared) {
+                setError(`You have already completed ${quizLevel}. An admin must grant permission for a retake.`);
+                return; 
+              }
+              // If they are cleared, onStart will handle consuming the token
+            }
+            // --- END PERMISSION CHECK ---
+        
+            setError("");
+            // Pass the name (either entered or derived) and email
+            onStart({ name: userName, email });
+          };
+          
+          const quizTitle = (quizLevel || "Default-Mixed").replace('-', ' ');
+        
+          return (
+            <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans -mt-8"> {/* Adjusted margin for visual centering */}
+              <div
+                className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full"
+              >
+                {/* Toggle Buttons */}
+                <div className="flex justify-center mb-6 rounded-lg bg-gray-100 p-1">
+                  <button
+                    onClick={() => {
+                      setAuthMode("signup");
+                      setError("");
+                    }}
+                    className={`w-1/2 py-2 rounded-lg font-semibold transition-all ${
+                      authMode === "signup"
+                        ? "bg-white text-pink-600 shadow"
+                        : "text-gray-500 hover:bg-gray-200"
+                    }`}
+                  >
+                    Sign Up
+                  </button>
+                  <button
+                    onClick={() => {
+                      setAuthMode("signin");
+                      setError("");
+                    }}
+                    className={`w-1/2 py-2 rounded-lg font-semibold transition-all ${
+                      authMode === "signin"
+                        ? "bg-white text-pink-600 shadow"
+                        : "text-gray-500 hover:bg-gray-200"
+                    }`}
+                  >
+                    Sign In
+                  </button>
+                </div>
+        
+                <h1 className="text-2xl font-bold text-gray-800 text-center mb-2 capitalize">
+                  {authMode === "signup" ? `Create Account` : `Sign In`}
+                </h1>
+                <p className="text-gray-600 text-center mb-6 capitalize">
+                  to take the {quizTitle} quiz
+                </p>
+        
+                <div className="space-y-4">
+                  {/* Full Name (Sign Up only) */}
+                  {authMode === "signup" && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                  )}
+        
+                  {/* Email Address (Both) */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+        
+                  {/* Password (Both) */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                      placeholder="••••••••"
+                    />
+                  </div>
+        
+                  {/* Confirm Password (Sign Up only) */}
+                  {authMode === "signup" && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Confirm Password
+                      </label>
+                      <input
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="••••••••"
+                      />
+                    </div>
+                  )}
+                </div>
+        
+                {error && (
+                  <p className="text-red-500 text-sm text-center mt-4">{error}</p>
+                )}
+        
+                <button
+                  onClick={handleStart}
+                  className="mt-6 w-full bg-pink-600 text-white py-3 rounded-2xl font-semibold shadow-lg hover:bg-pink-700 transition-all"
+                >
+                  {authMode === "signup" ? "Create Account & Start Quiz" : "Sign In & Start Quiz"}
+                </button>
+              </div>
+            </div>
+          );
+        }
+        
+        
+        // --- Exam Page Component ---
+        function ExamComponent({ user, onExamComplete, onRetake, quizLevel, questionSet }) {
+          const totalTime = 15 * 60; // 15 minutes
+          const [timeLeft, setTimeLeft] = useState(totalTime);
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [answers, setAnswers] = useState({});
+          const [isSubmitted, setIsSubmitted] = useState(false);
+          const [finalResult, setFinalResult] = useState(null); // To store score details
+        
+          const questions = questionSet;
+        
+          // --- Functions ---
+        
+          // Calculate score
+          const calculateScore = useCallback(() => {
+            let score = 0;
+            questions.forEach((q, index) => {
+              if (answers[index] === q.correct) {
+                score += 1;
+              }
+            });
+            return score;
+          }, [answers, questions]);
+        
+          // Handle final submission
+          const handleSubmit = useCallback(() => {
+            if (isSubmitted) return; // Prevent double submissions
+        
+            const score = calculateScore();
+            const percentage = (score / questions.length) * 100;
+            let gradeLetter = "F";
+            if (percentage > 85) gradeLetter = "A";
+            else if (percentage >= 75) gradeLetter = "B";
+        
+            const resultData = {
+              score: score,
+              total: questions.length,
+              percentage: percentage.toFixed(0), // Clean up percentage
+              gradeLetter: gradeLetter,
+              passed: percentage >= 75,
+            };
+            
+            onExamComplete(resultData);
+            
+            setFinalResult(resultData);
+            setIsSubmitted(true);
+            console.log("Final Answers:", answers);
+          }, [isSubmitted, calculateScore, questions, onExamComplete, answers]);
+        
+          // Countdown timer
+          useEffect(() => {
+            if (isSubmitted) return; // Stop timer if already submitted
+        
+            if (timeLeft <= 0) {
+              handleSubmit(); // Auto-submit when time is up
+              return;
+            }
+        
+            const timer = setInterval(() => setTimeLeft((t) => t - 1), 1000);
+            return () => clearInterval(timer);
+          }, [timeLeft, isSubmitted, handleSubmit]); // Dependencies
+        
+          const handleAnswer = (option) => {
+            setAnswers({ ...answers, [currentQuestion]: option });
+          };
+        
+          const nextQuestion = () => {
+            if (currentQuestion < questions.length - 1) {
+              setCurrentQuestion((q) => q + 1);
+            } else {
+              handleSubmit(); // Submit on the last question
+            }
+          };
+        
+          // --- Calculated Values ---
+          const minutes = Math.floor(timeLeft / 60);
+          const seconds = timeLeft % 60;
+          const progress = ((currentQuestion + 1) / questions.length) * 100;
+        
+          // --- Render Logic ---
+        
+          // Render Review & Score Screen
+          if (isSubmitted && finalResult) {
+            const { score, percentage, gradeLetter } = finalResult;
+        
+            let gradeMessage = "";
+            let gradeColorClass = ""; 
+            let buttonText = "";
+            let buttonColorClass = "";
+            let headerMessage = "Quiz Complete!";
+            let scoreBoxColorClass = "";
+        
+            if (percentage > 85) {
+              gradeMessage = "Congratulations! You passed the quiz.";
+              gradeColorClass = "text-green-600";
+              buttonText = "Take Another Quiz";
+              buttonColorClass = "bg-pink-600 hover:bg-pink-700"; // Pink theme
+              scoreBoxColorClass = "bg-green-50";
+            } else if (percentage >= 75) {
+              gradeMessage = "Very Good! You passed.";
+              gradeColorClass = "text-green-600";
+              buttonText = "Take Another Quiz";
+              buttonColorClass = "bg-green-600 hover:bg-green-700"; 
+              scoreBoxColorClass = "bg-green-50";
+            } else {
+              headerMessage = "Quiz Submitted";
+              gradeMessage = "Better luck next time! Try again?";
+              gradeColorClass = "text-red-600";
+              buttonText = "Retake This Quiz";
+              buttonColorClass = "bg-pink-600 hover:bg-pink-700"; // Pink theme
+              scoreBoxColorClass = "bg-red-50";
+            }
+        
+            return (
+              <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans -mt-8">
+                <div
+                  className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-2xl w-full" 
+                >
+                  <div className="text-center mb-6">
+                    <div className="text-6xl mb-4">
+                      {percentage >= 75 ? "🎉" : "😅"}
+                    </div>
+                    <h1 className="text-3xl font-bold text-gray-800 mb-2">
+                      {headerMessage}
+                    </h1>
+                    <p className={`text-lg font-semibold ${gradeColorClass}`}>
+                      {gradeMessage}
+                    </p>
+                    <p className="text-lg font-semibold text-gray-800 capitalize mt-1">
+                      Quiz: {quizLevel.replace('-', ' ')}
+                    </p>
+                  </div>
+        
+                  <div className={`p-5 rounded-lg mb-6 text-center ${scoreBoxColorClass}`}>
+                    <p className="text-lg text-gray-700">Your Score:</p>
+                    <div className="flex justify-center items-baseline space-x-3 mt-2">
+                      <p className={`text-4xl font-bold ${gradeColorClass}`}>
+                        {score} / {questions.length}
+                      </p>
+                      <p className="text-2xl font-semibold text-gray-600">
+                        ({percentage}%)
+                      </p>
+                    </div>
+                    <p className={`text-3xl font-bold mt-2 ${gradeColorClass}`}>
+                      Grade: {gradeLetter}
+                    </p>
+                  </div>
+        
+                  <div className="border-t border-gray-200 pt-4">
+                    <h2 className="text-xl font-semibold text-gray-700 mb-4 text-center sm:text-left">
+                      Review Your Answers
+                    </h2>
+                    <div className="max-h-64 overflow-y-auto space-y-4 p-2">
+                      {questions.map((q, index) => {
+                        const userAnswer = answers[index];
+                        const isCorrect = userAnswer === q.correct;
+                        const isAnswered = userAnswer !== undefined;
+        
+                        return (
+                          <div key={q.id} className="border border-gray-200 p-3 rounded-lg bg-white">
+                            <p className="font-semibold text-gray-800 mb-3">
+                              {index + 1}. {q.text}
+                            </p>
+                            
+                            <div className={`p-2 rounded-md text-sm ${
+                                !isAnswered
+                                  ? 'bg-gray-50 border-gray-300' 
+                                  : isCorrect 
+                                    ? 'bg-green-50 border-green-300'
+                                    : 'bg-red-50 border-red-300'
+                              } border flex items-center`}
+                            >
+                              <span className="font-medium text-gray-600 mr-2">Your Answer:</span>
+                              <span className={`font-semibold ${
+                                  !isAnswered
+                                    ? 'text-gray-500 italic'
+                                    : isCorrect 
+                                      ? 'text-green-700' 
+                                      : 'text-red-700'
+                                }`}>
+                                {isAnswered ? userAnswer : "No Answer"}
+                              </span>
+                              {isAnswered ? (
+                                 <span className={`ml-auto text-xs font-bold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
+                                   {isCorrect ? '✓ CORRECT' : '✗ INCORRECT'}
+                                 </span>
+                               ) : (
+                                 <span className="ml-auto text-xs font-bold text-gray-500">
+                                   MISSED
+                                 </span>
+                               )}
+                            </div>
+        
+                            {(!isCorrect || !isAnswered) && (
+                              <div className="p-2 mt-2 rounded-md bg-green-50 border-green-300 text-sm flex items-center">
+                                <span className="font-medium text-gray-600 mr-2">Correct Answer:</span>
+                                <span className="font-semibold text-green-700">{q.correct}</span>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+        
+                  <button
+                    onClick={onRetake} 
+                    className={`mt-6 w-full ${buttonColorClass} text-white py-3 rounded-2xl font-semibold shadow-lg transition-all`}
+                  >
+                    {buttonText}
+                  </button>
+                </div>
+              </div>
+            );
+          }
+        
+          // Render Question Screen
+          const q = questions[currentQuestion];
+          return (
+            <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans -mt-8">
+              <div
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-2xl w-full"
+              >
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                  <div>
+                    <h1 className="text-2xl font-bold text-gray-800 capitalize">
+                      {quizLevel.replace('-', ' ')}
+                    </h1>
+                    <p className="text-gray-600">
+                      Student: {user.name}
+                    </p>
+                  </div>
+                  <div className="mt-3 sm:mt-0 text-left sm:text-right">
+                    <p className="text-lg font-semibold text-red-600">
+                      Time Left: {String(minutes).padStart(2, "0")}:
+                      {String(seconds).padStart(2, "0")}
+                    </p>
+                  </div>
+                </div>
+        
+                <div className="mb-6">
+                  <div className="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>
+                      Question {currentQuestion + 1} of {questions.length}
+                    </span>
+                    <span>{progress.toFixed(0)}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-pink-600 h-2.5 rounded-full" // Pink progress bar
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                  </div>
+                </div>
+        
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                  {q.subject && (
+                    <p className="text-sm font-semibold text-pink-600 mb-2 uppercase">{q.subject}</p>
+                  )}
+                  <p className="text-xl font-semibold text-gray-800 mb-5">
+                    {q.text}
+                  </p>
+                  <div className="space-y-3">
+                    {q.options.map((option) => (
+                      <button
+                        key={option}
+                        onClick={() => handleAnswer(option)}
+                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                          answers[currentQuestion] === option
+                            ? "bg-pink-100 border-pink-500 font-semibold" // Pink selection
+                            : "bg-white border-gray-300 hover:bg-gray-50"
+                        }`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+        
+                <div className="flex justify-end mt-6">
+                  <button
+                    onClick={nextQuestion}
+                    disabled={answers[currentQuestion] === undefined} 
+                    className={`px-8 py-3 rounded-2xl font-semibold text-white shadow-lg transition-all ${
+                      answers[currentQuestion] === undefined
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-pink-600 hover:bg-pink-700" // Pink button
+                    }`}
+                  >
+                    {currentQuestion < questions.length - 1 ? "Next Question" : "Submit Quiz"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        }
+        
+        
+        // --- Admin Dashboard Component ---
+        function AdminDashboard({ results, onResetExam, clearedForRetake }) {
+          const totalSubmissions = results.length;
+          const passingSubmissions = results.filter(r => r.result.passed).length;
+          const passRate = totalSubmissions > 0 ? (passingSubmissions / totalSubmissions) * 100 : 0;
+          
+          const totalScore = results.reduce((acc, r) => acc + parseFloat(r.result.percentage), 0);
+          const averageScore = totalSubmissions > 0 ? (totalScore / totalSubmissions) : 0;
+        
+          const getGradeColor = (grade) => {
+            if (grade === "A") return "bg-green-100 text-green-800";
+            if (grade === "B") return "bg-blue-100 text-blue-800";
+            return "bg-red-100 text-red-800";
+          };
+        
+          return (
+            <div className="min-h-screen bg-gray-100 p-4 sm:p-8 font-sans -mt-8">
+              <div
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-6xl w-full mx-auto"
+              >
+                <h1 className="text-2xl font-bold text-gray-800 mb-6">
+                  Admin Dashboard
+                </h1>
+        
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                  <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                    <h2 className="text-sm font-medium text-gray-500">Total Submissions</h2>
+                    <p className="text-3xl font-bold text-gray-800">{totalSubmissions}</p>
+                  </div>
+                  <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                    <h2 className="text-sm font-medium text-gray-500">Pass Rate</h2>
+                    <p className="text-3xl font-bold text-green-600">{passRate.toFixed(0)}%</p>
+                  </div>
+                  <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                    <h2 className="text-sm font-medium text-gray-500">Average Score</h2>
+                    <p className="text-2xl font-bold text-pink-600">{averageScore.toFixed(0)}%</p> {/* Pink theme */}
+                  </div>
+                </div>
+        
+                <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                  All Submissions
+                </h2>
+                <div className="overflow-x-auto rounded-lg border border-gray-200">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Candidate</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quiz Level</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Percentage</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Grade</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {results.length === 0 ? (
+                        <tr>
+                          <td colSpan="8" className="px-6 py-12 text-center text-gray-500">
+                            No submissions yet.
+                          </td>
+                        </tr>
+                      ) : (
+                        results.map((r, index) => {
+                          const retakeKey = `${r.user.email}|${r.quizLevel}`;
+                          const isCleared = clearedForRetake.includes(retakeKey);
+                          return (
+                            <tr key={index} className="hover:bg-gray-50">
+                              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{r.user.name}</td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{r.user.email}</td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 capitalize">{r.quizLevel.replace('-', ' ')}</td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{r.result.score} / {r.result.total}</td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-700">{r.result.percentage}%</td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm">
+                                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${getGradeColor(r.result.gradeLetter)}`}>
+                                  {r.result.gradeLetter}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                {r.result.passed ? (
+                                  <span className="text-green-600">Passed</span>
+                                ) : (
+                                  <span className="text-red-600">Failed</span>
+                                )}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                {isCleared ? (
+                                  <span className="text-gray-500 font-medium">Cleared</span>
+                                ) : (
+                                  <button
+                                    onClick={() => onResetExam(retakeKey)}
+                                    className="text-pink-600 hover:text-pink-800 font-semibold" // Pink theme
+                                  >
+                                    Reset Exam
+                                  </button>
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        })
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          );
+        }
+        
+        
+        // --- Main App Component ---
+        function App() {
+          const [page, setPage] = useState("auth"); // 'auth', 'exam', 'admin'
+          const [currentUser, setCurrentUser] = useState(null);
+          const [examResults, setExamResults] = useState([]); // Array to hold all results
+          const [clearedForRetake, setClearedForRetake] = useState([]); // NEW: Tracks users cleared for retake
+          const [selectedQuizLevel, setSelectedQuizLevel] = useState(null); // NEW STATE
+        
+          // This effect adds click listeners to the HTML buttons
+          useEffect(() => {
+              const handleQuizStartClick = (event) => {
+                  const button = event.target.closest('.quiz-start-btn');
+                  if (!button) return;
+                  
+                  const level = button.getAttribute('data-quiz-level');
+                  console.log("Quiz level selected:", level);
+                  setSelectedQuizLevel(level);
+                  setPage("auth"); // Go to auth page first
+                  
+                  // Scroll to the quiz app
+                  document.getElementById('react-app-root').scrollIntoView({ behavior: 'smooth' });
+                  
+                  // Update header text
+                  const headerText = document.querySelector('#quiz-app-header p');
+                  if (headerText) {
+                      headerText.textContent = `Please sign in or sign up to take the ${level.replace('-', ' ')} quiz.`;
+                  }
+              };
+              
+              document.addEventListener('click', handleQuizStartClick);
+              
+              return () => {
+                  document.removeEventListener('click', handleQuizStartClick);
+              };
+          }, []); 
+        
+          const handleStartExam = (user) => {
+            console.log("Starting exam for:", user);
+            setCurrentUser(user);
+            
+            const level = selectedQuizLevel || "Default-Mixed";
+            const retakeKey = `${user.email}|${level}`;
+            setClearedForRetake(prev => prev.filter(key => key !== retakeKey));
+            
+            setPage("exam");
+          };
+        
+          const handleExamComplete = (result) => {
+            console.log("Exam complete:", result);
+            const level = selectedQuizLevel || "Default-Mixed";
+            setExamResults(prevResults => {
+                const otherResults = prevResults.filter(r => !(r.user.email === currentUser.email && r.quizLevel === level));
+                return [...otherResults, { user: currentUser, result: result, quizLevel: level }];
+            });
+          };
+          
+          const handleResetExam = (retakeKey) => {
+            console.log("Clearing user for retake:", retakeKey);
+            setClearedForRetake(prev => {
+              if (!prev.includes(retakeKey)) {
+                return [...prev, retakeKey];
+              }
+              return prev;
+            });
+          };
+        
+          const handleRetake = () => {
+            console.log("Retaking exam...");
+            setCurrentUser(null);
+            setPage("auth"); 
+          };
+        
+          const showAdmin = () => {
+            setPage("admin");
+          };
+          
+          const showAuth = () => {
+            setSelectedQuizLevel(null); 
+            setPage("auth");
+            
+            const headerText = document.querySelector('#quiz-app-header p');
+            if (headerText) {
+                headerText.textContent = "Please select a level above to start a quiz, or take the mixed practice quiz below.";
+            }
+          };
+        
+          // Floating buttons to switch modes
+          const ModeSwitcher = ({ page }) => (
+            <div className="fixed bottom-4 right-4 flex flex-col space-y-2 z-50">
+              {page !== 'auth' && page !== 'exam' && (
+                <button
+                  onClick={showAuth}
+                  className="bg-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700" // Pink theme
+                >
+                  Go to Quiz
+                </button>
+              )}
+              {page !== 'admin' && (
+                <button
+                  onClick={showAdmin}
+                  className="bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-purple-700"
+                >
+                  Go to Admin
+                </button>
+              )}
+            </div>
+          );
+        
+          if (page === "auth") {
+            return (
+              <div>
+                <ModeSwitcher page={page} />
+                <AuthPage 
+                  onStart={handleStartExam} 
+                  examResults={examResults}
+                  clearedForRetake={clearedForRetake}
+                  quizLevel={selectedQuizLevel || "Default-Mixed"}
+                />
+              </div>
+            );
+          }
+        
+          if (page === "exam") {
+            const level = selectedQuizLevel || "Default-Mixed";
+            const questions = quizBank[level] || quizBank["Default-Mixed"];
+            
+            return (
+              <div>
+                <ModeSwitcher page={page} />
+                <ExamComponent 
+                  user={currentUser} 
+                  onExamComplete={handleExamComplete}
+                  onRetake={handleRetake}
+                  quizLevel={level} 
+                  questionSet={questions} 
+                />
+              </div>
+            );
+          }
+        
+          if (page === "admin") {
+            return (
+              <div>
+                <ModeSwitcher page={page} />
+                <AdminDashboard 
+                  results={examResults} 
+                  onResetExam={handleResetExam}
+                  clearedForRetake={clearedForRetake}
+                />
+              </div>
+            );
+          }
+        
+          return null;
+        }
+        
+        // --- Render the App ---
+        const root = ReactDOM.createRoot(document.getElementById('react-app-root'));
+        root.render(<App />);
+    </script>
+
+</body>
+</html>
+
